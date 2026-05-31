@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FCS Engenharia - Serviços de engenharia e consultoria: acompanhamento de obra, projeto estrutural, hidrossanitário e preventivo.">
+    <title>{% block title %}FCS Engenharia{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FCS Engenharia" height="45" onerror="this.style.display='none'">
+            <span class="fw-bold fs-4">FCS <span class="text-accent">Engenharia</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Início</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == '/sobre' %}active{% endif %}" href="/sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == '/servicos' %}active{% endif %}" href="/servicos">Serviços</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == '/contato' %}active{% endif %}" href="/contato">Contato</a></li>
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-whatsapp" href="https://wa.me/55SEUNUMERO" target="_blank">
+                        <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Conteúdo -->
+{% block content %}{% endblock %}
+
+<!-- Footer -->
+<footer class="footer py-5">
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-4">
+                <h5 class="fw-bold text-white mb-3">FCS <span class="text-accent">Engenharia</span></h5>
+                <p class="text-secondary-light">Soluções em engenharia e consultoria com comprometimento, qualidade e excelência técnica.</p>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="text-white fw-semibold mb-3">Serviços</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/servicos" class="footer-link">Acompanhamento de Obra</a></li>
+                    <li><a href="/servicos" class="footer-link">Projeto Estrutural</a></li>
+                    <li><a href="/servicos" class="footer-link">Projeto Hidrossanitário</a></li>
+                    <li><a href="/servicos" class="footer-link">Projeto Preventivo</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="text-white fw-semibold mb-3">Contato</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="https://wa.me/55SEUNUMERO" target="_blank" class="footer-link">
+                            <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="mailto:contato@fcsengenharia.com.br" class="footer-link">
+                            <i class="bi bi-envelope me-2"></i>contato@fcsengenharia.com.br
+                        </a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="https://instagram.com/fcsengenharia" target="_blank" class="footer-link">
+                            <i class="bi bi-instagram me-2"></i>@fcsengenharia
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary mt-4">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <p class="text-secondary-light mb-1 mb-md-0 small">&copy; 2026 FCS Engenharia. Todos os direitos reservados.</p>
+            <p class="text-secondary-light small">CREA-XX 000000/D</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Botão flutuante WhatsApp -->
+<a href="https://wa.me/55SEUNUMERO" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

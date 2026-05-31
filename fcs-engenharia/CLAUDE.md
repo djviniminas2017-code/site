@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Repositório GitHub
+
+Repositório: https://github.com/djviniminas2017-code/site
+
+**Regra obrigatória:** Após cada alteração no projeto, crie um commit e faça push para o GitHub. O hook `post-commit` em `.git/hooks/post-commit` executa o push automaticamente após cada commit. Portanto, basta fazer o commit normalmente — o push é automático.
+
 ## Commands
 
 ```bash

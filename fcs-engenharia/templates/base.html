@@ -44,9 +44,10 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FCS Engenharia" height="45" onerror="this.style.display='none'">
-            <span class="fw-bold fs-4">FCS <span class="text-accent">Engenharia</span></span>
+        <a class="navbar-brand d-flex align-items-center" href="/">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FCS Engenharia" height="55"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span class="fw-bold fs-4 d-none align-items-center gap-1">FCS <span class="text-accent">Engenharia</span></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu">
             <span class="navbar-toggler-icon"></span>

@@ -1,26 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FCS Engenharia — Projetos estruturais, hidrossanitários e PPCI com responsabilidade técnica CREA. Entregue no prazo, aprovado na Prefeitura e no banco.">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0D3B6E">
+    <meta name="theme-color" content="#0a0a0a">
 
-    <!-- Open Graph / WhatsApp / LinkedIn -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FCS Engenharia">
     <meta property="og:title" content="FCS Engenharia — Sua Obra Aprovada e Segura">
-    <meta property="og:description" content="Projeto estrutural com ART, entregue no prazo, aprovado pela Prefeitura e Corpo de Bombeiros. Atendimento direto com o engenheiro via WhatsApp.">
+    <meta property="og:description" content="Projeto estrutural com ART, entregue no prazo, aprovado pela Prefeitura e Corpo de Bombeiros.">
     <meta property="og:image" content="{{ request.host_url.rstrip('/') }}{{ url_for('static', filename='images/og-image.png') }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="{{ request.url }}">
-
-    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="FCS Engenharia — Sua Obra Aprovada e Segura">
-    <meta name="twitter:description" content="Projeto estrutural com ART, entregue no prazo, aprovado pela Prefeitura e Corpo de Bombeiros.">
     <meta name="twitter:image" content="{{ request.host_url.rstrip('/') }}{{ url_for('static', filename='images/og-image.png') }}">
 
     <title>{% block title %}FCS Engenharia{% endblock %}</title>
@@ -31,98 +27,102 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
     <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
 
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS principal -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
+    <!-- Bloco para CDNs e CSS adicionais por página -->
+    {% block head_extra %}{% endblock %}
     {% block meta_extra %}{% endblock %}
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="navbar">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FCS Engenharia" height="55"
+<!-- ===== NAVBAR ===== -->
+<nav class="fcs-nav" id="navbar">
+    <div class="nav-inner">
+        <a class="nav-brand" href="/">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FCS Engenharia" height="48"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <span class="fw-bold fs-4 d-none align-items-center gap-1">FCS <span class="text-accent">Engenharia</span></span>
+            <span class="nav-brand-text d-none">FCS <span>Engenharia</span></span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu">
-            <span class="navbar-toggler-icon"></span>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
         </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
-                <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/" {% if request.path == '/' %}aria-current="page"{% endif %}>Início</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.path == '/sobre' %}active{% endif %}" href="/sobre" {% if request.path == '/sobre' %}aria-current="page"{% endif %}>Sobre</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.path == '/servicos' %}active{% endif %}" href="/servicos" {% if request.path == '/servicos' %}aria-current="page"{% endif %}>Serviços</a></li>
-                <li class="nav-item"><a class="nav-link {% if request.path == '/contato' %}active{% endif %}" href="/contato" {% if request.path == '/contato' %}aria-current="page"{% endif %}>Contato</a></li>
-                <li class="nav-item ms-lg-3">
-                    <a class="btn btn-whatsapp" href="https://wa.me/5547997374547?text=Olá!%20Vim%20pelo%20site%20da%20FCS%20Engenharia%20e%20preciso%20de%20um%20orçamento." target="_blank" rel="noopener">
-                        <i class="bi bi-whatsapp me-1"></i> Orçamento
-                    </a>
-                </li>
-            </ul>
+
+        <div class="nav-menu" id="navMenu">
+            <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/" aria-current="{% if request.path == '/' %}page{% endif %}">Início</a>
+            <a class="nav-link {% if request.path == '/sobre' %}active{% endif %}" href="/sobre">Sobre</a>
+            <a class="nav-link {% if request.path == '/servicos' %}active{% endif %}" href="/servicos">Serviços</a>
+            <a class="nav-link {% if request.path == '/contato' %}active{% endif %}" href="/contato">Contato</a>
+            <a class="nav-cta" href="https://wa.me/5547997374547?text=Olá!%20Vim%20pelo%20site%20da%20FCS%20Engenharia%20e%20preciso%20de%20um%20orçamento." target="_blank" rel="noopener">
+                <i class="bi bi-whatsapp"></i> Orçamento
+            </a>
         </div>
     </div>
 </nav>
 
-<!-- Conteúdo -->
+<!-- ===== CONTEÚDO ===== -->
 {% block content %}{% endblock %}
 
-<!-- Footer -->
-<footer class="footer py-5">
-    <div class="container">
-        <div class="row gy-4">
-            <div class="col-lg-4">
-                <h5 class="fw-bold text-white mb-3">FCS <span class="text-accent">Engenharia</span></h5>
-                <p class="text-secondary-light">Projetos estruturais, hidrossanitários e PPCI com responsabilidade técnica CREA. Entregamos no prazo para que sua obra não pare.</p>
-            </div>
-            <div class="col-lg-4">
-                <h6 class="text-white fw-semibold mb-3">Serviços</h6>
-                <ul class="list-unstyled">
-                    <li><a href="/servicos#estrutural" class="footer-link">Projeto Estrutural</a></li>
-                    <li><a href="/servicos#acompanhamento" class="footer-link">Acompanhamento de Obra</a></li>
-                    <li><a href="/servicos#hidrossanitario" class="footer-link">Projeto Hidrossanitário</a></li>
-                    <li><a href="/servicos#preventivo" class="footer-link">Projeto Preventivo (PPCI)</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4">
-                <h6 class="text-white fw-semibold mb-3">Contato</h6>
-                <ul class="list-unstyled">
-                    <li class="mb-2">
-                        <a href="https://wa.me/5547997374547" target="_blank" rel="noopener" class="footer-link">
-                            <i class="bi bi-whatsapp me-2"></i>WhatsApp
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="mailto:fcsengenharia@outlook.com" class="footer-link">
-                            <i class="bi bi-envelope me-2"></i>fcsengenharia@outlook.com
-                        </a>
-                    </li>
-                    <li class="mb-2">
-                        <a href="https://www.instagram.com/fcsengenharia_/" target="_blank" rel="noopener" class="footer-link">
-                            <i class="bi bi-instagram me-2"></i>@fcsengenharia_
-                        </a>
-                    </li>
-                </ul>
-            </div>
+<!-- ===== FOOTER ===== -->
+<footer class="fcs-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo-text">FCS <span>Engenharia</span></span>
+            <p>Projetos estruturais, hidrossanitários e PPCI com responsabilidade técnica CREA. Entregamos no prazo para que sua obra não pare.</p>
         </div>
-        <hr class="border-secondary mt-4">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-            <p class="text-secondary-light mb-0 small">&copy; 2026 FCS Engenharia. Todos os direitos reservados.</p>
-            <p class="text-secondary-light small mb-0">CREA-XX 000000/D</p>
+        <div class="footer-col">
+            <h6>Serviços</h6>
+            <a href="/servicos#estrutural">Projeto Estrutural</a>
+            <a href="/servicos#acompanhamento">Acompanhamento de Obra</a>
+            <a href="/servicos#hidrossanitario">Projeto Hidrossanitário</a>
+            <a href="/servicos#preventivo">Projeto Preventivo (PPCI)</a>
         </div>
+        <div class="footer-col">
+            <h6>Contato</h6>
+            <a href="https://wa.me/5547997374547" target="_blank" rel="noopener"><i class="bi bi-whatsapp"></i>(47) 99737-4547</a>
+            <a href="mailto:fcsengenharia@outlook.com"><i class="bi bi-envelope"></i>fcsengenharia@outlook.com</a>
+            <a href="https://www.instagram.com/fcsengenharia_/" target="_blank" rel="noopener"><i class="bi bi-instagram"></i>@fcsengenharia_</a>
+            <a href="https://linkedin.com/company/fcs-engenharia-e-consultoria" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i>FCS Engenharia</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 FCS Engenharia. Todos os direitos reservados.</p>
+        <p>CREA-XX 000000/D</p>
     </div>
 </footer>
 
 <!-- Botão flutuante WhatsApp -->
-<a href="https://wa.me/5547997374547?text=Olá!%20Vim%20pelo%20site%20e%20preciso%20de%20um%20orçamento." target="_blank" rel="noopener" class="whatsapp-float" title="Fale conosco no WhatsApp" aria-label="Falar no WhatsApp">
-    <i class="bi bi-whatsapp" aria-hidden="true"></i>
+<a href="https://wa.me/5547997374547?text=Olá!%20Vim%20pelo%20site%20e%20preciso%20de%20um%20orçamento." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <i class="bi bi-whatsapp"></i>
 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<!-- ===== SCRIPTS BASE ===== -->
+<script>
+// Navbar scroll + mobile toggle
+(function(){
+    const nav = document.getElementById('navbar');
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+        toggle.classList.toggle('open', open);
+    });
+})();
+</script>
+
+{% block scripts %}{% endblock %}
 </body>
 </html>

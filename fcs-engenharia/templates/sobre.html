@@ -1,66 +1,157 @@
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block title %}Sobre — FCS Engenharia{% endblock %}
-
 {% block meta_extra %}
-<meta name="description" content="Conheça a FCS Engenharia — escritório de engenharia estrutural com registro CREA, comprometimento técnico e atendimento direto com o engenheiro responsável.">
+<meta name="description" content="Conheça a FCS Engenharia — escritório de engenharia estrutural com registro CREA, atendimento direto com o engenheiro e entrega no prazo.">
+{% endblock %}
+
+{% block head_extra %}
+<style>
+#sobre-content { padding: 6rem 0; background: var(--bg); }
+#mvv          { padding: 6rem 0; background: var(--bg-2); }
+#parceiros    { padding: 6rem 0; background: var(--bg); }
+
+/* Stats grid */
+.sobre-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.sobre-stat {
+    padding: 1.75rem;
+    text-align: center;
+    border-radius: var(--radius);
+}
+.sobre-stat-icon { font-size: 2.2rem; color: var(--accent); margin-bottom: .6rem; }
+.sobre-stat-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: .25rem;
+}
+.sobre-stat-sub { font-size: .82rem; color: var(--gray); }
+
+/* MVV */
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+.mvv-card-new {
+    padding: 2rem;
+    border-radius: var(--radius);
+}
+.mvv-icon-new {
+    width: 52px; height: 52px;
+    background: rgba(255,107,53,.1);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--accent);
+    margin-bottom: 1.25rem;
+}
+.mvv-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--white); margin-bottom: .6rem;
+}
+.mvv-desc { font-size: .88rem; color: var(--gray); line-height: 1.65; }
+.mvv-list { list-style: none; padding: 0; }
+.mvv-list li {
+    font-size: .88rem; color: var(--gray);
+    padding: .22rem 0;
+    display: flex; align-items: center; gap: .4rem;
+}
+.mvv-list li::before { content: '→'; color: var(--accent); font-weight: 700; }
+
+/* Parceiros */
+.parceiros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+.parceiros-benefits { display: flex; flex-direction: column; gap: .85rem; }
+.perk {
+    display: flex; align-items: flex-start; gap: 1rem;
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    transition: border-color var(--transition);
+}
+.perk:hover { border-color: rgba(255,107,53,.25); }
+.perk-icon {
+    width: 38px; height: 38px;
+    background: rgba(255,107,53,.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: var(--accent);
+    flex-shrink: 0;
+}
+.perk-title { font-family: 'Space Grotesk', sans-serif; font-size: .95rem; font-weight: 700; color: var(--white); margin-bottom: .2rem; }
+.perk-desc  { font-size: .82rem; color: var(--gray); line-height: 1.5; }
+
+@media (max-width: 768px) {
+    .mvv-grid, .parceiros-grid { grid-template-columns: 1fr; }
+    .sobre-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
 {% endblock %}
 
 {% block content %}
 
-<!-- Page Header -->
-<section class="page-header">
-    <div class="container text-center text-white">
-        <h1 class="fw-bold display-5">Sobre a FCS Engenharia</h1>
-        <p class="lead opacity-90 mb-0">Quem está por trás dos projetos que garantem sua obra</p>
+<div class="page-header">
+    <div class="fcs-container">
+        <span class="page-header-label">Quem somos</span>
+        <h1>Sobre a FCS Engenharia</h1>
+        <p>Quem está por trás dos projetos que garantem sua obra</p>
     </div>
-</section>
+</div>
 
-<!-- Sobre -->
-<section class="py-6">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <p class="text-accent fw-semibold text-uppercase letter-spacing">Nossa história</p>
-                <h2 class="fw-bold mb-4">Nascemos para resolver o problema certo</h2>
-                <p class="text-muted mb-3">A FCS Engenharia foi criada por um engenheiro que viu de perto o que acontece quando uma obra começa sem projeto adequado: retrabalho, custo extra, obra embargada e dor de cabeça para o cliente.</p>
-                <p class="text-muted mb-3">Nossa missão é simples: entregar projetos técnicos corretos, no prazo combinado, para que sua obra avance sem travar. Atendemos desde a planta residencial até empreendimentos comerciais e industriais.</p>
-                <p class="text-muted mb-4">Quando você contrata a FCS, não fala com um atendente — fala direto com o engenheiro que vai assinar o seu projeto. Essa proximidade garante que nenhum detalhe seja perdido do briefing até a entrega.</p>
-                <div class="d-flex gap-3 flex-wrap">
-                    <a href="/servicos" class="btn btn-primary-custom px-4">Ver nossos serviços</a>
-                    <a href="https://wa.me/5547997374547" target="_blank" class="btn btn-outline-secondary px-4">
-                        <i class="bi bi-whatsapp me-1"></i>Falar conosco
-                    </a>
+<!-- SOBRE -->
+<section id="sobre-content">
+    <div class="fcs-container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+            <div class="reveal-left">
+                <span class="section-label">Nossa história</span>
+                <h2 class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.6rem)">Nascemos para resolver o problema certo</h2>
+                <p style="color:var(--gray);line-height:1.75;margin-bottom:1rem;font-size:.95rem">
+                    A FCS Engenharia foi criada por um engenheiro que viu de perto o que acontece quando uma obra começa sem projeto adequado: retrabalho, custo extra, obra embargada e dor de cabeça para o cliente.
+                </p>
+                <p style="color:var(--gray);line-height:1.75;margin-bottom:1rem;font-size:.95rem">
+                    Nossa missão é simples: entregar projetos técnicos corretos, no prazo combinado, para que sua obra avance sem travar.
+                </p>
+                <p style="color:var(--gray);line-height:1.75;margin-bottom:2rem;font-size:.95rem">
+                    Quando você contrata a FCS, não fala com um atendente — fala direto com o engenheiro que vai assinar o seu projeto.
+                </p>
+                <div style="display:flex;gap:1rem;flex-wrap:wrap">
+                    <a href="/servicos" class="btn-primary-new"><i class="bi bi-grid-fill"></i> Ver serviços</a>
+                    <a href="https://wa.me/5547997374547" target="_blank" rel="noopener" class="btn-outline-new"><i class="bi bi-whatsapp"></i> Falar conosco</a>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row g-3">
-                    <div class="col-6">
-                        <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-award display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">CREA Ativo</h5>
-                            <p class="text-muted small mb-0">Registro profissional válido</p>
-                        </div>
+            <div class="reveal">
+                <div class="sobre-stats">
+                    <div class="sobre-stat glass-card">
+                        <div class="sobre-stat-icon"><i class="bi bi-award-fill"></i></div>
+                        <div class="sobre-stat-title">CREA Ativo</div>
+                        <div class="sobre-stat-sub">Registro profissional válido</div>
                     </div>
-                    <div class="col-6">
-                        <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-file-earmark-check display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">ART inclusa</h5>
-                            <p class="text-muted small mb-0">Em todos os projetos</p>
-                        </div>
+                    <div class="sobre-stat glass-card">
+                        <div class="sobre-stat-icon"><i class="bi bi-file-earmark-check-fill"></i></div>
+                        <div class="sobre-stat-title">ART inclusa</div>
+                        <div class="sobre-stat-sub">Em todos os projetos</div>
                     </div>
-                    <div class="col-6">
-                        <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-calendar-check display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">Prazo fixo</h5>
-                            <p class="text-muted small mb-0">Definido em contrato</p>
-                        </div>
+                    <div class="sobre-stat glass-card">
+                        <div class="sobre-stat-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                        <div class="sobre-stat-title">Prazo fixo</div>
+                        <div class="sobre-stat-sub">Definido em contrato</div>
                     </div>
-                    <div class="col-6">
-                        <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-person-check display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">Direto com o eng.</h5>
-                            <p class="text-muted small mb-0">Sem intermediários</p>
-                        </div>
+                    <div class="sobre-stat glass-card">
+                        <div class="sobre-stat-icon"><i class="bi bi-person-check-fill"></i></div>
+                        <div class="sobre-stat-title">Direto com o eng.</div>
+                        <div class="sobre-stat-sub">Sem intermediários</div>
                     </div>
                 </div>
             </div>
@@ -68,95 +159,94 @@
     </div>
 </section>
 
-<!-- Missão, Visão e Valores -->
-<section class="py-6 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <p class="text-accent fw-semibold text-uppercase letter-spacing">Nossa essência</p>
-            <h2 class="fw-bold">Missão, Visão e Valores</h2>
+<!-- MISSÃO, VISÃO E VALORES -->
+<section id="mvv">
+    <div class="fcs-container">
+        <div class="section-header reveal" style="text-align:center">
+            <span class="section-label">Nossa essência</span>
+            <h2 class="section-title">Missão, Visão e Valores</h2>
         </div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="mvv-card p-4 h-100 rounded-3">
-                    <div class="mvv-icon mb-3"><i class="bi bi-bullseye"></i></div>
-                    <h5 class="fw-bold mb-3">Missão</h5>
-                    <p class="text-muted mb-0">Garantir que cada cliente tenha um projeto estruturalmente seguro, aprovado pelos órgãos competentes e entregue no prazo — para que a obra avance sem travar.</p>
-                </div>
+        <div class="mvv-grid">
+            <div class="mvv-card-new glass-card reveal">
+                <div class="mvv-icon-new"><i class="bi bi-bullseye"></i></div>
+                <div class="mvv-title">Missão</div>
+                <div class="mvv-desc">Garantir que cada cliente tenha um projeto estruturalmente seguro, aprovado pelos órgãos competentes e entregue no prazo — para que a obra avance sem travar.</div>
             </div>
-            <div class="col-md-4">
-                <div class="mvv-card p-4 h-100 rounded-3">
-                    <div class="mvv-icon mb-3"><i class="bi bi-eye"></i></div>
-                    <h5 class="fw-bold mb-3">Visão</h5>
-                    <p class="text-muted mb-0">Ser o escritório de referência na região para quem precisa de um engenheiro de confiança — recomendado por arquitetos, construtores e clientes satisfeitos.</p>
-                </div>
+            <div class="mvv-card-new glass-card reveal" style="transition-delay:.12s">
+                <div class="mvv-icon-new"><i class="bi bi-eye-fill"></i></div>
+                <div class="mvv-title">Visão</div>
+                <div class="mvv-desc">Ser o escritório de referência na região para quem precisa de um engenheiro de confiança — recomendado por arquitetos, construtores e clientes satisfeitos.</div>
             </div>
-            <div class="col-md-4">
-                <div class="mvv-card p-4 h-100 rounded-3">
-                    <div class="mvv-icon mb-3"><i class="bi bi-gem"></i></div>
-                    <h5 class="fw-bold mb-3">Valores</h5>
-                    <ul class="text-muted list-unstyled mb-0">
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Transparência no orçamento e no prazo</li>
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Responsabilidade técnica sem concessões</li>
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Conformidade rigorosa com as normas ABNT</li>
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Comunicação direta e sem jargão</li>
-                        <li><i class="bi bi-check2 text-accent me-2"></i>Respeito ao dinheiro e ao prazo do cliente</li>
-                    </ul>
-                </div>
+            <div class="mvv-card-new glass-card reveal" style="transition-delay:.24s">
+                <div class="mvv-icon-new"><i class="bi bi-gem"></i></div>
+                <div class="mvv-title">Valores</div>
+                <ul class="mvv-list">
+                    <li>Transparência no orçamento e no prazo</li>
+                    <li>Responsabilidade técnica sem concessões</li>
+                    <li>Conformidade rigorosa com as normas ABNT</li>
+                    <li>Comunicação direta e sem jargão</li>
+                    <li>Respeito ao dinheiro e ao prazo do cliente</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Para Arquitetos / Parceiros -->
-<section class="py-6">
-    <div class="container">
-        <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-                <p class="text-accent fw-semibold text-uppercase letter-spacing">Para arquitetos e construtores</p>
-                <h2 class="fw-bold mb-4">Seja nosso parceiro de indicação</h2>
-                <p class="text-muted mb-3">Se você é arquiteto, construtor ou corretor de imóveis, sabe que seus clientes frequentemente precisam de um engenheiro estrutural de confiança para fechar o ciclo do projeto.</p>
-                <p class="text-muted mb-4">A FCS Engenharia trabalha em parceria com profissionais da área. Entrega pontual, comunicação clara e projetos que não causam dor de cabeça para você nem para o seu cliente.</p>
-                <a href="https://wa.me/5547997374547?text=Olá!%20Sou%20arquiteto%20e%20gostaria%20de%20conhecer%20a%20FCS%20Engenharia%20para%20futuras%20parcerias." target="_blank" class="btn btn-primary-custom px-4">
-                    <i class="bi bi-whatsapp me-2"></i>Conversar sobre parceria
+<!-- PARA PARCEIROS -->
+<section id="parceiros">
+    <div class="fcs-container">
+        <div class="parceiros-grid">
+            <div class="reveal-left">
+                <span class="section-label">Para arquitetos e construtores</span>
+                <h2 class="section-title" style="font-size:clamp(1.7rem,3.2vw,2.4rem)">Seja nosso parceiro de indicação</h2>
+                <p style="color:var(--gray);line-height:1.75;margin-bottom:2rem;font-size:.95rem">
+                    Se você é arquiteto, construtor ou corretor, seus clientes frequentemente precisam de um engenheiro estrutural de confiança. A FCS Engenharia trabalha em parceria com profissionais da área — entrega pontual, comunicação clara e projetos que não causam dor de cabeça.
+                </p>
+                <a href="https://wa.me/5547997374547?text=Olá!%20Sou%20arquiteto%20e%20gostaria%20de%20conhecer%20a%20FCS%20Engenharia%20para%20futuras%20parcerias." target="_blank" rel="noopener" class="btn-primary-new">
+                    <i class="bi bi-whatsapp"></i> Conversar sobre parceria
                 </a>
             </div>
-            <div class="col-lg-6">
-                <div class="parceria-box p-4 rounded-4">
-                    <h6 class="fw-bold mb-3 text-white">O que oferecemos aos parceiros:</h6>
-                    <ul class="list-unstyled mb-0">
-                        <li class="d-flex gap-3 mb-3">
-                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
-                            <div>
-                                <strong class="text-white">Resposta rápida</strong>
-                                <p class="text-secondary-light small mb-0">Retorno no mesmo dia para orçamentos indicados por parceiros</p>
-                            </div>
-                        </li>
-                        <li class="d-flex gap-3 mb-3">
-                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
-                            <div>
-                                <strong class="text-white">Comunicação direta</strong>
-                                <p class="text-secondary-light small mb-0">Você acompanha o andamento do projeto do seu cliente</p>
-                            </div>
-                        </li>
-                        <li class="d-flex gap-3 mb-3">
-                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
-                            <div>
-                                <strong class="text-white">Prazo cumprido</strong>
-                                <p class="text-secondary-light small mb-0">Sua reputação com o cliente não é afetada por atrasos nossos</p>
-                            </div>
-                        </li>
-                        <li class="d-flex gap-3">
-                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
-                            <div>
-                                <strong class="text-white">Projeto executável</strong>
-                                <p class="text-secondary-light small mb-0">Detalhamento claro para o mestre de obras executar sem dúvidas</p>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="parceiros-benefits reveal">
+                <div class="perk">
+                    <div class="perk-icon"><i class="bi bi-lightning-fill"></i></div>
+                    <div>
+                        <div class="perk-title">Resposta rápida</div>
+                        <div class="perk-desc">Retorno no mesmo dia para orçamentos indicados por parceiros</div>
+                    </div>
+                </div>
+                <div class="perk">
+                    <div class="perk-icon"><i class="bi bi-chat-dots-fill"></i></div>
+                    <div>
+                        <div class="perk-title">Comunicação direta</div>
+                        <div class="perk-desc">Você acompanha o andamento do projeto do seu cliente</div>
+                    </div>
+                </div>
+                <div class="perk">
+                    <div class="perk-icon"><i class="bi bi-calendar-check-fill"></i></div>
+                    <div>
+                        <div class="perk-title">Prazo cumprido</div>
+                        <div class="perk-desc">Sua reputação com o cliente não é afetada por atrasos nossos</div>
+                    </div>
+                </div>
+                <div class="perk">
+                    <div class="perk-icon"><i class="bi bi-tools"></i></div>
+                    <div>
+                        <div class="perk-title">Projeto executável</div>
+                        <div class="perk-desc">Detalhamento claro para o mestre de obras executar sem dúvidas</div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal, .reveal-left').forEach(el => io.observe(el));
+</script>
 {% endblock %}

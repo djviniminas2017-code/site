@@ -1,0 +1,21 @@
+{
+  "name": "FCS Engenharia",
+  "short_name": "FCS Eng",
+  "description": "Projetos estruturais, hidrossanitários e PPCI com responsabilidade técnica CREA.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0D3B6E",
+  "theme_color": "#0D3B6E",
+  "icons": [
+    {
+      "src": "/static/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

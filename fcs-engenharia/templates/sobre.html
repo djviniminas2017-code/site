@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}Sobre - FCS Engenharia{% endblock %}
+{% block title %}Sobre — FCS Engenharia{% endblock %}
+
+{% block meta_extra %}
+<meta name="description" content="Conheça a FCS Engenharia — escritório de engenharia estrutural com registro CREA, comprometimento técnico e atendimento direto com o engenheiro responsável.">
+{% endblock %}
 
 {% block content %}
 
@@ -7,7 +11,7 @@
 <section class="page-header">
     <div class="container text-center text-white">
         <h1 class="fw-bold display-5">Sobre a FCS Engenharia</h1>
-        <p class="lead opacity-90 mb-0">Conheça nossa história, missão e valores</p>
+        <p class="lead opacity-90 mb-0">Quem está por trás dos projetos que garantem sua obra</p>
     </div>
 </section>
 
@@ -16,41 +20,46 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <p class="text-accent fw-semibold text-uppercase letter-spacing">Quem somos</p>
-                <h2 class="fw-bold mb-4">FCS Engenharia</h2>
-                <p class="text-muted mb-3">A FCS Engenharia é uma empresa de engenharia e consultoria criada com o propósito de oferecer soluções técnicas de alta qualidade para obras e projetos de engenharia civil.</p>
-                <p class="text-muted mb-3">Com início de atividades previsto para o final de 2026, a empresa nasce com o compromisso de atender clientes que buscam responsabilidade técnica, qualidade e seriedade em seus projetos e obras.</p>
-                <p class="text-muted mb-4">Atuamos em todas as fases do empreendimento — desde a elaboração de projetos até o acompanhamento da execução — garantindo que cada etapa seja realizada dentro das normas técnicas e dentro do prazo estipulado.</p>
-                <a href="/servicos" class="btn btn-primary-custom px-4">Conheça nossos serviços</a>
+                <p class="text-accent fw-semibold text-uppercase letter-spacing">Nossa história</p>
+                <h2 class="fw-bold mb-4">Nascemos para resolver o problema certo</h2>
+                <p class="text-muted mb-3">A FCS Engenharia foi criada por um engenheiro que viu de perto o que acontece quando uma obra começa sem projeto adequado: retrabalho, custo extra, obra embargada e dor de cabeça para o cliente.</p>
+                <p class="text-muted mb-3">Nossa missão é simples: entregar projetos técnicos corretos, no prazo combinado, para que sua obra avance sem travar. Atendemos desde a planta residencial até empreendimentos comerciais e industriais.</p>
+                <p class="text-muted mb-4">Quando você contrata a FCS, não fala com um atendente — fala direto com o engenheiro que vai assinar o seu projeto. Essa proximidade garante que nenhum detalhe seja perdido do briefing até a entrega.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="/servicos" class="btn btn-primary-custom px-4">Ver nossos serviços</a>
+                    <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn btn-outline-secondary px-4">
+                        <i class="bi bi-whatsapp me-1"></i>Falar conosco
+                    </a>
+                </div>
             </div>
             <div class="col-lg-6">
                 <div class="row g-3">
                     <div class="col-6">
                         <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-calendar-check display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">2026</h5>
-                            <p class="text-muted small mb-0">Início de atividades</p>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-tools display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">4 Serviços</h5>
-                            <p class="text-muted small mb-0">Especialidades técnicas</p>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="stat-box p-4 rounded-3 text-center h-100">
                             <i class="bi bi-award display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">CREA</h5>
-                            <p class="text-muted small mb-0">Registro profissional</p>
+                            <h5 class="fw-bold mb-1">CREA Ativo</h5>
+                            <p class="text-muted small mb-0">Registro profissional válido</p>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="stat-box p-4 rounded-3 text-center h-100">
-                            <i class="bi bi-geo-alt display-5 text-accent mb-2"></i>
-                            <h5 class="fw-bold mb-1">Local</h5>
-                            <p class="text-muted small mb-0">Sua cidade/região</p>
+                            <i class="bi bi-file-earmark-check display-5 text-accent mb-2"></i>
+                            <h5 class="fw-bold mb-1">ART inclusa</h5>
+                            <p class="text-muted small mb-0">Em todos os projetos</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-box p-4 rounded-3 text-center h-100">
+                            <i class="bi bi-calendar-check display-5 text-accent mb-2"></i>
+                            <h5 class="fw-bold mb-1">Prazo fixo</h5>
+                            <p class="text-muted small mb-0">Definido em contrato</p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="stat-box p-4 rounded-3 text-center h-100">
+                            <i class="bi bi-person-check display-5 text-accent mb-2"></i>
+                            <h5 class="fw-bold mb-1">Direto com o eng.</h5>
+                            <p class="text-muted small mb-0">Sem intermediários</p>
                         </div>
                     </div>
                 </div>
@@ -71,14 +80,14 @@
                 <div class="mvv-card p-4 h-100 rounded-3">
                     <div class="mvv-icon mb-3"><i class="bi bi-bullseye"></i></div>
                     <h5 class="fw-bold mb-3">Missão</h5>
-                    <p class="text-muted mb-0">Oferecer soluções técnicas em engenharia civil com qualidade, segurança e responsabilidade, contribuindo para o desenvolvimento sustentável de obras e empreendimentos.</p>
+                    <p class="text-muted mb-0">Garantir que cada cliente tenha um projeto estruturalmente seguro, aprovado pelos órgãos competentes e entregue no prazo — para que a obra avance sem travar.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="mvv-card p-4 h-100 rounded-3">
                     <div class="mvv-icon mb-3"><i class="bi bi-eye"></i></div>
                     <h5 class="fw-bold mb-3">Visão</h5>
-                    <p class="text-muted mb-0">Ser referência regional em serviços de engenharia e consultoria, reconhecida pela excelência técnica, ética profissional e satisfação dos clientes.</p>
+                    <p class="text-muted mb-0">Ser o escritório de referência na região para quem precisa de um engenheiro de confiança — recomendado por arquitetos, construtores e clientes satisfeitos.</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -86,11 +95,63 @@
                     <div class="mvv-icon mb-3"><i class="bi bi-gem"></i></div>
                     <h5 class="fw-bold mb-3">Valores</h5>
                     <ul class="text-muted list-unstyled mb-0">
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Ética e transparência</li>
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Comprometimento técnico</li>
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Qualidade e segurança</li>
-                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Respeito ao cliente</li>
-                        <li><i class="bi bi-check2 text-accent me-2"></i>Inovação constante</li>
+                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Transparência no orçamento e no prazo</li>
+                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Responsabilidade técnica sem concessões</li>
+                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Conformidade rigorosa com as normas ABNT</li>
+                        <li class="mb-1"><i class="bi bi-check2 text-accent me-2"></i>Comunicação direta e sem jargão</li>
+                        <li><i class="bi bi-check2 text-accent me-2"></i>Respeito ao dinheiro e ao prazo do cliente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Para Arquitetos / Parceiros -->
+<section class="py-6">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <p class="text-accent fw-semibold text-uppercase letter-spacing">Para arquitetos e construtores</p>
+                <h2 class="fw-bold mb-4">Seja nosso parceiro de indicação</h2>
+                <p class="text-muted mb-3">Se você é arquiteto, construtor ou corretor de imóveis, sabe que seus clientes frequentemente precisam de um engenheiro estrutural de confiança para fechar o ciclo do projeto.</p>
+                <p class="text-muted mb-4">A FCS Engenharia trabalha em parceria com profissionais da área. Entrega pontual, comunicação clara e projetos que não causam dor de cabeça para você nem para o seu cliente.</p>
+                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Sou%20arquiteto%20e%20gostaria%20de%20conhecer%20a%20FCS%20Engenharia%20para%20futuras%20parcerias." target="_blank" class="btn btn-primary-custom px-4">
+                    <i class="bi bi-whatsapp me-2"></i>Conversar sobre parceria
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="parceria-box p-4 rounded-4">
+                    <h6 class="fw-bold mb-3 text-white">O que oferecemos aos parceiros:</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-flex gap-3 mb-3">
+                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
+                            <div>
+                                <strong class="text-white">Resposta rápida</strong>
+                                <p class="text-secondary-light small mb-0">Retorno no mesmo dia para orçamentos indicados por parceiros</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 mb-3">
+                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
+                            <div>
+                                <strong class="text-white">Comunicação direta</strong>
+                                <p class="text-secondary-light small mb-0">Você acompanha o andamento do projeto do seu cliente</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3 mb-3">
+                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
+                            <div>
+                                <strong class="text-white">Prazo cumprido</strong>
+                                <p class="text-secondary-light small mb-0">Sua reputação com o cliente não é afetada por atrasos nossos</p>
+                            </div>
+                        </li>
+                        <li class="d-flex gap-3">
+                            <i class="bi bi-check-circle-fill text-accent mt-1"></i>
+                            <div>
+                                <strong class="text-white">Projeto executável</strong>
+                                <p class="text-secondary-light small mb-0">Detalhamento claro para o mestre de obras executar sem dúvidas</p>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>

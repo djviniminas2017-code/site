@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}Serviços - FCS Engenharia{% endblock %}
+{% block title %}Serviços — FCS Engenharia{% endblock %}
+
+{% block meta_extra %}
+<meta name="description" content="Projeto estrutural, acompanhamento de obra, projeto hidrossanitário e PPCI (projeto preventivo). Todos com ART e assinatura CREA. Orçamento grátis.">
+{% endblock %}
 
 {% block content %}
 
@@ -7,7 +11,7 @@
 <section class="page-header">
     <div class="container text-center text-white">
         <h1 class="fw-bold display-5">Nossos Serviços</h1>
-        <p class="lead opacity-90 mb-0">Soluções completas em engenharia civil e consultoria</p>
+        <p class="lead opacity-90 mb-0">Do projeto à aprovação — com responsabilidade técnica em cada etapa</p>
     </div>
 </section>
 
@@ -15,48 +19,70 @@
 <section class="py-6">
     <div class="container">
 
-        <!-- Acompanhamento de Obra -->
-        <div class="row align-items-center g-5 mb-6">
+        <!-- Projeto Estrutural -->
+        <div class="row align-items-center g-5 mb-6" id="estrutural">
             <div class="col-lg-6">
-                <div class="service-detail-icon mb-3"><i class="bi bi-building-check"></i></div>
-                <h3 class="fw-bold mb-3">Acompanhamento de Obra</h3>
-                <p class="text-muted mb-3">O acompanhamento técnico de obra garante que a execução da construção ocorra conforme o projeto aprovado, dentro do prazo e com a qualidade exigida. A FCS Engenharia oferece fiscalização especializada para proteger o investimento do cliente.</p>
+                <div class="service-detail-icon mb-3"><i class="bi bi-layers"></i></div>
+                <h3 class="fw-bold mb-2">Projeto Estrutural</h3>
+                <p class="text-accent fw-semibold small mb-3">Para obras que precisam de segurança técnica, financiamento ou aprovação na Prefeitura</p>
+                <p class="text-muted mb-3">Sem projeto estrutural assinado, sua obra não consegue financiamento no banco, não recebe alvará e corre risco de ter problemas sérios no futuro. O projeto estrutural da FCS entrega o cálculo completo, detalhamento executivo e ART — tudo que a obra precisa para avançar com segurança.</p>
                 <ul class="list-check mb-4">
-                    <li>Visitas técnicas periódicas ao canteiro de obras</li>
-                    <li>Verificação da conformidade com projetos e normas técnicas</li>
-                    <li>Controle de materiais e execução</li>
-                    <li>Relatórios fotográficos e técnicos</li>
-                    <li>Gestão de cronograma e interfaces com a obra</li>
+                    <li>Estruturas de concreto armado e protendido</li>
+                    <li>Estruturas metálicas e mistas</li>
+                    <li>Fundações: sapatas, blocos, estacas e radier</li>
+                    <li>Laudos técnicos e perícias estruturais</li>
+                    <li>Pranchas executivas e memorial de cálculo</li>
+                    <li>Conformidade com NBR 6118 e normas vigentes</li>
+                    <li>ART registrada no CREA</li>
                 </ul>
-                <a href="/contato" class="btn btn-primary-custom px-4">Solicitar orçamento</a>
+                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20um%20projeto%20estrutural.%20Pode%20me%20passar%20um%20orçamento%3F" target="_blank" class="btn btn-primary-custom px-4">
+                    <i class="bi bi-whatsapp me-2"></i>Pedir orçamento
+                </a>
             </div>
             <div class="col-lg-6">
-                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-building-check display-1 text-accent opacity-50"></i>
+                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center flex-column p-4 text-center">
+                    <i class="bi bi-layers display-1 text-accent opacity-40 mb-3"></i>
+                    <div class="service-highlight-tags d-flex flex-wrap gap-2 justify-content-center">
+                        <span class="tag-badge">Concreto armado</span>
+                        <span class="tag-badge">Estrutura metálica</span>
+                        <span class="tag-badge">Fundações</span>
+                        <span class="tag-badge">ART inclusa</span>
+                        <span class="tag-badge">NBR 6118</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <hr class="my-5 border-light">
 
-        <!-- Projeto Estrutural -->
-        <div class="row align-items-center g-5 mb-6 flex-lg-row-reverse">
+        <!-- Acompanhamento de Obra -->
+        <div class="row align-items-center g-5 mb-6 flex-lg-row-reverse" id="acompanhamento">
             <div class="col-lg-6">
-                <div class="service-detail-icon mb-3"><i class="bi bi-layers"></i></div>
-                <h3 class="fw-bold mb-3">Projeto Estrutural</h3>
-                <p class="text-muted mb-3">O projeto estrutural é fundamental para a segurança e durabilidade de qualquer edificação. Desenvolvemos projetos completos de estruturas de concreto armado, metálicas e mistas, com rigoroso cálculo e dimensionamento.</p>
+                <div class="service-detail-icon mb-3"><i class="bi bi-building-check"></i></div>
+                <h3 class="fw-bold mb-2">Acompanhamento de Obra</h3>
+                <p class="text-accent fw-semibold small mb-3">Para quem quer garantir que o que foi projetado está sendo executado — e proteger o investimento</p>
+                <p class="text-muted mb-3">Muitos problemas estruturais surgem não por falta de projeto, mas por execução incorreta. O acompanhamento técnico da FCS garante que o mestre de obras siga o projeto à risca, com visitas periódicas, relatórios e intervenção quando necessário.</p>
                 <ul class="list-check mb-4">
-                    <li>Estruturas de concreto armado e protendido</li>
-                    <li>Estruturas metálicas e mistas</li>
-                    <li>Fundações: sapatas, blocos, estacas e radier</li>
-                    <li>Laudos técnicos e perícias estruturais</li>
-                    <li>Projetos conforme NBR 6118 e normas vigentes</li>
+                    <li>Visitas técnicas periódicas ao canteiro de obras</li>
+                    <li>Verificação da conformidade com projetos e normas</li>
+                    <li>Controle de materiais e especificações</li>
+                    <li>Relatórios fotográficos detalhados</li>
+                    <li>Gestão de cronograma e interfaces com a obra</li>
+                    <li>Registro de ocorrências e orientações ao executor</li>
                 </ul>
-                <a href="/contato" class="btn btn-primary-custom px-4">Solicitar orçamento</a>
+                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20acompanhamento%20técnico%20de%20obra.%20Pode%20me%20passar%20mais%20informações%3F" target="_blank" class="btn btn-primary-custom px-4">
+                    <i class="bi bi-whatsapp me-2"></i>Pedir orçamento
+                </a>
             </div>
             <div class="col-lg-6">
-                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-layers display-1 text-accent opacity-50"></i>
+                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center flex-column p-4 text-center">
+                    <i class="bi bi-building-check display-1 text-accent opacity-40 mb-3"></i>
+                    <div class="service-highlight-tags d-flex flex-wrap gap-2 justify-content-center">
+                        <span class="tag-badge">Visitas técnicas</span>
+                        <span class="tag-badge">Relatórios</span>
+                        <span class="tag-badge">Controle de materiais</span>
+                        <span class="tag-badge">Conformidade ABNT</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,23 +90,34 @@
         <hr class="my-5 border-light">
 
         <!-- Projeto Hidrossanitário -->
-        <div class="row align-items-center g-5 mb-6">
+        <div class="row align-items-center g-5 mb-6" id="hidrossanitario">
             <div class="col-lg-6">
                 <div class="service-detail-icon mb-3"><i class="bi bi-droplet-half"></i></div>
-                <h3 class="fw-bold mb-3">Projeto Hidrossanitário</h3>
-                <p class="text-muted mb-3">O projeto hidrossanitário engloba o planejamento completo dos sistemas hidráulicos e sanitários da edificação, garantindo o correto abastecimento de água, coleta de esgoto e drenagem pluvial.</p>
+                <h3 class="fw-bold mb-2">Projeto Hidrossanitário</h3>
+                <p class="text-accent fw-semibold small mb-3">Para evitar infiltrações, retrabalho caro e problemas com a concessionária de água</p>
+                <p class="text-muted mb-3">Um projeto hidrossanitário mal dimensionado é um problema que aparece depois que as paredes já estão fechadas — e custa caro para corrigir. Desenvolvemos o projeto completo de água, esgoto e drenagem conforme as normas, garantindo que a instalação funcione bem desde o primeiro dia.</p>
                 <ul class="list-check mb-4">
                     <li>Sistema de abastecimento de água fria e quente</li>
                     <li>Rede de esgoto sanitário e ventilação</li>
                     <li>Drenagem de águas pluviais</li>
                     <li>Dimensionamento de reservatórios</li>
                     <li>Projetos conforme NBR 5626, 8160 e demais normas</li>
+                    <li>ART registrada no CREA</li>
                 </ul>
-                <a href="/contato" class="btn btn-primary-custom px-4">Solicitar orçamento</a>
+                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20um%20projeto%20hidrossanitário.%20Pode%20me%20passar%20um%20orçamento%3F" target="_blank" class="btn btn-primary-custom px-4">
+                    <i class="bi bi-whatsapp me-2"></i>Pedir orçamento
+                </a>
             </div>
             <div class="col-lg-6">
-                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-droplet-half display-1 text-accent opacity-50"></i>
+                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center flex-column p-4 text-center">
+                    <i class="bi bi-droplet-half display-1 text-accent opacity-40 mb-3"></i>
+                    <div class="service-highlight-tags d-flex flex-wrap gap-2 justify-content-center">
+                        <span class="tag-badge">Água fria e quente</span>
+                        <span class="tag-badge">Esgoto e ventilação</span>
+                        <span class="tag-badge">Drenagem pluvial</span>
+                        <span class="tag-badge">NBR 5626</span>
+                        <span class="tag-badge">ART inclusa</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,23 +125,34 @@
         <hr class="my-5 border-light">
 
         <!-- Projeto Preventivo -->
-        <div class="row align-items-center g-5 flex-lg-row-reverse">
+        <div class="row align-items-center g-5 flex-lg-row-reverse" id="preventivo">
             <div class="col-lg-6">
                 <div class="service-detail-icon mb-3"><i class="bi bi-shield-check"></i></div>
-                <h3 class="fw-bold mb-3">Projeto Preventivo (PPCI)</h3>
-                <p class="text-muted mb-3">O Projeto de Prevenção e Proteção contra Incêndio (PPCI) é exigido pelo Corpo de Bombeiros para habite-se e alvarás. Elaboramos projetos completos, garantindo a aprovação junto aos órgãos competentes.</p>
+                <h3 class="fw-bold mb-2">Projeto Preventivo (PPCI)</h3>
+                <p class="text-accent fw-semibold small mb-3">Exigido pelo Corpo de Bombeiros para habite-se, AVCB e funcionamento comercial</p>
+                <p class="text-muted mb-3">Sem o PPCI aprovado pelos Bombeiros, não existe habite-se. Sem habite-se, o imóvel não pode ser vendido, alugado ou financiado. Elaboramos o projeto completo e acompanhamos o processo de aprovação junto ao Corpo de Bombeiros do seu estado.</p>
                 <ul class="list-check mb-4">
                     <li>Projeto de saídas de emergência e rotas de fuga</li>
                     <li>Sistemas de detecção e alarme de incêndio</li>
                     <li>Sistemas de combate a incêndio (hidrantes, sprinklers)</li>
                     <li>Sinalização de emergência e iluminação de fuga</li>
-                    <li>Aprovação junto ao Corpo de Bombeiros</li>
+                    <li>Acompanhamento da aprovação no Corpo de Bombeiros</li>
+                    <li>ART registrada no CREA</li>
                 </ul>
-                <a href="/contato" class="btn btn-primary-custom px-4">Solicitar orçamento</a>
+                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20um%20projeto%20preventivo%20(PPCI).%20Pode%20me%20passar%20um%20orçamento%3F" target="_blank" class="btn btn-primary-custom px-4">
+                    <i class="bi bi-whatsapp me-2"></i>Pedir orçamento
+                </a>
             </div>
             <div class="col-lg-6">
-                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center">
-                    <i class="bi bi-shield-check display-1 text-accent opacity-50"></i>
+                <div class="service-img-box rounded-4 d-flex align-items-center justify-content-center flex-column p-4 text-center">
+                    <i class="bi bi-shield-check display-1 text-accent opacity-40 mb-3"></i>
+                    <div class="service-highlight-tags d-flex flex-wrap gap-2 justify-content-center">
+                        <span class="tag-badge">PPCI completo</span>
+                        <span class="tag-badge">Habite-se</span>
+                        <span class="tag-badge">AVCB</span>
+                        <span class="tag-badge">Bombeiros</span>
+                        <span class="tag-badge">ART inclusa</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -115,10 +163,11 @@
 <!-- CTA -->
 <section class="py-5 cta-section">
     <div class="container text-center text-white">
-        <h3 class="fw-bold mb-3">Pronto para começar seu projeto?</h3>
-        <p class="mb-4 opacity-90">Entre em contato agora e receba um orçamento personalizado sem compromisso.</p>
-        <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn btn-whatsapp btn-lg px-5">
-            <i class="bi bi-whatsapp me-2"></i>Falar no WhatsApp
+        <h3 class="fw-bold mb-3">Qual serviço você precisa?</h3>
+        <p class="mb-2 opacity-90">Mande uma mensagem e receba um orçamento personalizado no mesmo dia.</p>
+        <p class="mb-5 opacity-65 small">Atendemos em todo o Brasil para projetos. Acompanhamento de obra conforme nossa região de atuação.</p>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20um%20orçamento.%20Pode%20me%20ajudar%3F" target="_blank" class="btn btn-whatsapp btn-lg px-5">
+            <i class="bi bi-whatsapp me-2"></i>Pedir orçamento grátis
         </a>
     </div>
 </section>

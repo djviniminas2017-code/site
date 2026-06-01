@@ -1,115 +1,269 @@
 {% extends 'base.html' %}
-{% block title %}FCS Engenharia - Início{% endblock %}
+{% block title %}FCS Engenharia — Projeto Estrutural e Acompanhamento de Obra{% endblock %}
+
+{% block meta_extra %}
+<meta name="description" content="Escritório de engenharia estrutural com responsabilidade técnica CREA. Projetos estruturais, hidrossanitários e PPCI entregues no prazo para aprovação na Prefeitura, Bombeiros e financiamento bancário.">
+<meta property="og:title" content="FCS Engenharia — Sua Obra Aprovada e Segura">
+<meta property="og:description" content="Projeto estrutural com ART, entregue no prazo, aprovado pela Prefeitura e Corpo de Bombeiros. Atendimento direto com o engenheiro via WhatsApp.">
+<meta property="og:type" content="website">
+{% endblock %}
 
 {% block content %}
 
 <!-- Hero -->
 <section class="hero d-flex align-items-center">
     <div class="container text-center text-white">
-        <p class="text-accent fw-semibold text-uppercase letter-spacing mb-2">Engenharia & Consultoria</p>
-        <h1 class="display-4 fw-bold mb-4">Soluções técnicas com<br><span class="text-accent">excelência e segurança</span></h1>
-        <p class="lead mb-5 mx-auto" style="max-width:600px;">Da concepção à execução, a FCS Engenharia oferece serviços especializados para garantir qualidade, segurança e conformidade em cada projeto.</p>
+        <p class="text-accent fw-semibold text-uppercase letter-spacing mb-2">Engenharia Estrutural com Responsabilidade Técnica</p>
+        <h1 class="display-4 fw-bold mb-4">Sua obra aprovada,<br><span class="text-accent">no prazo e sem surpresas</span></h1>
+        <p class="lead mb-5 mx-auto" style="max-width:620px;">Projeto estrutural assinado por engenheiro CREA, entregue com ART para aprovação na Prefeitura, Corpo de Bombeiros e financiamento bancário. Atendimento direto, sem intermediários.</p>
         <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="/servicos" class="btn btn-primary-custom btn-lg px-5">Nossos Serviços</a>
-            <a href="/contato" class="btn btn-outline-light btn-lg px-5">Fale Conosco</a>
+            <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20um%20projeto%20estrutural.%20Pode%20me%20enviar%20um%20orçamento%3F" target="_blank" class="btn btn-whatsapp btn-lg px-5">
+                <i class="bi bi-whatsapp me-2"></i>Pedir Orçamento Grátis
+            </a>
+            <a href="#como-funciona" class="btn btn-outline-light btn-lg px-5">Como Funciona</a>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center gap-4 mt-5 hero-badges">
+            <span class="badge-hero"><i class="bi bi-patch-check-fill me-2 text-accent"></i>Registro CREA ativo</span>
+            <span class="badge-hero"><i class="bi bi-file-earmark-check-fill me-2 text-accent"></i>ART em todos os projetos</span>
+            <span class="badge-hero"><i class="bi bi-clock-fill me-2 text-accent"></i>Prazo definido em contrato</span>
         </div>
     </div>
 </section>
 
-<!-- Serviços resumo -->
+<!-- Problema/Solução (Pain Agitation) -->
+<section class="py-5 bg-white border-bottom">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-9">
+                <p class="text-muted mb-0 fs-5">Obra travada esperando projeto? Banco exigindo ART? Prefeitura ou Bombeiros bloqueando o alvará? A FCS Engenharia desburocratiza sua obra — do projeto à aprovação final.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Serviços -->
 <section class="py-6 bg-light">
     <div class="container">
         <div class="text-center mb-5">
             <p class="text-accent fw-semibold text-uppercase letter-spacing">O que fazemos</p>
-            <h2 class="fw-bold">Nossos Serviços</h2>
-            <p class="text-muted mx-auto" style="max-width:550px;">Oferecemos soluções completas em engenharia para atender às necessidades de cada cliente com responsabilidade técnica.</p>
+            <h2 class="fw-bold">Projetos que desbloqueiam sua obra</h2>
+            <p class="text-muted mx-auto" style="max-width:580px;">Cada serviço entregue com responsabilidade técnica, dentro do prazo acordado e acompanhado de toda a documentação para aprovação.</p>
         </div>
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
                 <div class="service-card h-100 text-center p-4">
-                    <div class="service-icon mb-3"><i class="bi bi-building-check"></i></div>
-                    <h5 class="fw-bold mb-2">Acompanhamento de Obra</h5>
-                    <p class="text-muted small">Fiscalização técnica e gestão eficiente no canteiro de obras para garantir qualidade e prazo.</p>
-                    <a href="/servicos" class="btn-link-custom mt-2 d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
+                    <div class="service-icon mb-3"><i class="bi bi-layers"></i></div>
+                    <h5 class="fw-bold mb-2">Projeto Estrutural</h5>
+                    <p class="text-muted small mb-3">Cálculo e detalhamento de estruturas de concreto armado, metálicas e fundações. Projeto assinado e com ART.</p>
+                    <ul class="text-start list-unstyled small text-muted mb-3">
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Concreto armado e protendido</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Estruturas metálicas</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Fundações e radier</li>
+                    </ul>
+                    <a href="/servicos#estrutural" class="btn-link-custom mt-auto d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="service-card h-100 text-center p-4">
-                    <div class="service-icon mb-3"><i class="bi bi-layers"></i></div>
-                    <h5 class="fw-bold mb-2">Projeto Estrutural</h5>
-                    <p class="text-muted small">Dimensionamento e cálculo de estruturas com segurança, atendendo às normas técnicas vigentes.</p>
-                    <a href="/servicos" class="btn-link-custom mt-2 d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
+                    <div class="service-icon mb-3"><i class="bi bi-building-check"></i></div>
+                    <h5 class="fw-bold mb-2">Acompanhamento de Obra</h5>
+                    <p class="text-muted small mb-3">Fiscalização técnica periódica para garantir que a execução siga o projeto e as normas. Você não precisa entender de obra — é pra isso que existimos.</p>
+                    <ul class="text-start list-unstyled small text-muted mb-3">
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Visitas técnicas regulares</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Relatórios fotográficos</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Controle de materiais</li>
+                    </ul>
+                    <a href="/servicos#acompanhamento" class="btn-link-custom mt-auto d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="service-card h-100 text-center p-4">
                     <div class="service-icon mb-3"><i class="bi bi-droplet-half"></i></div>
                     <h5 class="fw-bold mb-2">Projeto Hidrossanitário</h5>
-                    <p class="text-muted small">Sistemas de abastecimento de água, esgoto e drenagem com eficiência e sustentabilidade.</p>
-                    <a href="/servicos" class="btn-link-custom mt-2 d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
+                    <p class="text-muted small mb-3">Sistemas de água, esgoto e drenagem projetados corretamente desde o início. Evita infiltrações, entupimentos e retrabalho caro.</p>
+                    <ul class="text-start list-unstyled small text-muted mb-3">
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Água fria e quente</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Esgoto e ventilação</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Drenagem pluvial</li>
+                    </ul>
+                    <a href="/servicos#hidrossanitario" class="btn-link-custom mt-auto d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="service-card h-100 text-center p-4">
                     <div class="service-icon mb-3"><i class="bi bi-shield-check"></i></div>
-                    <h5 class="fw-bold mb-2">Projeto Preventivo</h5>
-                    <p class="text-muted small">Projetos de prevenção e combate a incêndio (PPCI) em conformidade com o Corpo de Bombeiros.</p>
-                    <a href="/servicos" class="btn-link-custom mt-2 d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
+                    <h5 class="fw-bold mb-2">Projeto Preventivo (PPCI)</h5>
+                    <p class="text-muted small mb-3">Exigido pelo Corpo de Bombeiros para o habite-se. Elaboramos o projeto completo e acompanhamos a aprovação.</p>
+                    <ul class="text-start list-unstyled small text-muted mb-3">
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Rotas de fuga e saídas</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Detecção e alarme</li>
+                        <li><i class="bi bi-check2-circle text-accent me-1"></i>Aprovação nos Bombeiros</li>
+                    </ul>
+                    <a href="/servicos#preventivo" class="btn-link-custom mt-auto d-inline-block">Saiba mais <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Como Funciona -->
+<section class="py-6" id="como-funciona">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="text-accent fw-semibold text-uppercase letter-spacing">Processo simples e transparente</p>
+            <h2 class="fw-bold">Como funciona contratar a FCS</h2>
+            <p class="text-muted mx-auto" style="max-width:560px;">Sem burocracia, sem surpresas. Do primeiro contato até a entrega do projeto aprovado, você sabe exatamente o que vai acontecer.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-3">
+                <div class="process-step text-center p-4">
+                    <div class="process-number">01</div>
+                    <i class="bi bi-chat-dots process-icon mb-3"></i>
+                    <h6 class="fw-bold mb-2">Conversa inicial</h6>
+                    <p class="text-muted small mb-0">Você nos conta o que precisa — tipo de obra, prazo e documentos disponíveis. Respondemos no mesmo dia pelo WhatsApp.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="process-step text-center p-4">
+                    <div class="process-number">02</div>
+                    <i class="bi bi-file-text process-icon mb-3"></i>
+                    <h6 class="fw-bold mb-2">Orçamento e prazo</h6>
+                    <p class="text-muted small mb-0">Enviamos proposta com valor fixo e prazo definido em contrato. Sem cobranças surpresa e sem "depende".</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="process-step text-center p-4">
+                    <div class="process-number">03</div>
+                    <i class="bi bi-pencil-square process-icon mb-3"></i>
+                    <h6 class="fw-bold mb-2">Elaboração do projeto</h6>
+                    <p class="text-muted small mb-0">Desenvolvemos o projeto conforme as normas ABNT, com cálculos detalhados e pranchas executivas prontas para uso.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="process-step text-center p-4">
+                    <div class="process-number">04</div>
+                    <i class="bi bi-check-circle process-icon mb-3"></i>
+                    <h6 class="fw-bold mb-2">Entrega com ART</h6>
+                    <p class="text-muted small mb-0">Você recebe o projeto assinado, com ART registrada no CREA, pronto para Prefeitura, Bombeiros e banco.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Vi%20o%20site%20da%20FCS%20Engenharia%20e%20quero%20entender%20como%20funciona." target="_blank" class="btn btn-primary-custom btn-lg px-5">
+                <i class="bi bi-whatsapp me-2"></i>Iniciar conversa gratuita
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Por que escolher a FCS -->
-<section class="py-6">
+<section class="py-6 bg-light">
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <p class="text-accent fw-semibold text-uppercase letter-spacing">Por que nos escolher</p>
-                <h2 class="fw-bold mb-4">Comprometimento técnico em cada detalhe</h2>
+                <p class="text-accent fw-semibold text-uppercase letter-spacing">Nossos diferenciais</p>
+                <h2 class="fw-bold mb-4">O que você ganha contratando a FCS</h2>
                 <div class="d-flex flex-column gap-4">
                     <div class="d-flex gap-3">
                         <div class="feature-icon flex-shrink-0"><i class="bi bi-patch-check"></i></div>
                         <div>
-                            <h6 class="fw-bold mb-1">Responsabilidade Técnica</h6>
-                            <p class="text-muted small mb-0">Projetos assinados por engenheiro habilitado no CREA, com total responsabilidade técnica.</p>
+                            <h6 class="fw-bold mb-1">Responsabilidade técnica real</h6>
+                            <p class="text-muted small mb-0">Projetos assinados por engenheiro com registro ativo no CREA e ART emitida para cada serviço. Você tem proteção jurídica e técnica.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div class="feature-icon flex-shrink-0"><i class="bi bi-calendar-check"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Prazo garantido em contrato</h6>
+                            <p class="text-muted small mb-0">Sua obra não pode esperar. Estabelecemos prazos reais e cumprimos — porque sabemos que atraso no projeto significa atraso na obra.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <div class="feature-icon flex-shrink-0"><i class="bi bi-person-lines-fill"></i></div>
+                        <div>
+                            <h6 class="fw-bold mb-1">Atendimento direto com o engenheiro</h6>
+                            <p class="text-muted small mb-0">Sem secretária, sem intermediário. Você fala diretamente com quem assina o projeto. Dúvida resolvida na hora.</p>
                         </div>
                     </div>
                     <div class="d-flex gap-3">
                         <div class="feature-icon flex-shrink-0"><i class="bi bi-clipboard2-check"></i></div>
                         <div>
-                            <h6 class="fw-bold mb-1">Conformidade com Normas</h6>
-                            <p class="text-muted small mb-0">Todos os projetos seguem rigorosamente as normas da ABNT e legislações vigentes.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <div class="feature-icon flex-shrink-0"><i class="bi bi-people"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Atendimento Personalizado</h6>
-                            <p class="text-muted small mb-0">Cada cliente recebe atenção individualizada, com soluções sob medida para sua necessidade.</p>
-                        </div>
-                    </div>
-                    <div class="d-flex gap-3">
-                        <div class="feature-icon flex-shrink-0"><i class="bi bi-clock-history"></i></div>
-                        <div>
-                            <h6 class="fw-bold mb-1">Prazo e Pontualidade</h6>
-                            <p class="text-muted small mb-0">Comprometimento com prazos estabelecidos, garantindo a continuidade do seu empreendimento.</p>
+                            <h6 class="fw-bold mb-1">Projeto aprovado na primeira vez</h6>
+                            <p class="text-muted small mb-0">Desenvolvemos seguindo as normas da ABNT e os requisitos específicos de cada órgão. Menos idas e vindas, mais agilidade.</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="cta-box p-5 rounded-4 text-center text-white">
-                    <i class="bi bi-chat-dots display-3 mb-3 text-accent"></i>
-                    <h3 class="fw-bold mb-3">Precisa de um orçamento?</h3>
-                    <p class="mb-4 opacity-90">Entre em contato agora mesmo. Respondemos rapidamente e sem compromisso.</p>
-                    <a href="https://wa.me/55SEUNUMERO" target="_blank" class="btn btn-whatsapp btn-lg px-5">
-                        <i class="bi bi-whatsapp me-2"></i>Falar no WhatsApp
-                    </a>
+                <!-- FAQ Ansiedades -->
+                <div class="faq-box p-4 rounded-4">
+                    <p class="text-accent fw-semibold text-uppercase letter-spacing mb-3" style="font-size:0.75rem;">Dúvidas frequentes</p>
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Quanto tempo leva para receber o projeto?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">
+                                    Depende da complexidade, mas projetos residenciais são entregues em 10 a 20 dias úteis. O prazo exato é definido antes de assinar o contrato — você sabe a data de entrega antes de pagar.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    O projeto será aceito pela Prefeitura e pelo banco?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">
+                                    Sim. Todos os projetos seguem as normas ABNT e incluem ART registrada no CREA, que é o que a Prefeitura, os Bombeiros e os bancos exigem para aprovação e financiamento.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Preciso ter projeto arquitetônico pronto?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">
+                                    Para o projeto estrutural, sim — precisamos da planta arquitetônica. Mas pode ser um projeto simples. Caso você ainda não tenha, podemos indicar parceiros de confiança.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item faq-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    O atendimento é presencial ou pode ser à distância?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body faq-body">
+                                    O projeto pode ser desenvolvido à distância em todo o Brasil. Você nos envia os documentos por e-mail ou WhatsApp e recebe os arquivos digitais. Para acompanhamento de obra, atendemos presencialmente na nossa região de atuação.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- CTA WhatsApp -->
+<section class="py-6 cta-section">
+    <div class="container text-center text-white">
+        <i class="bi bi-whatsapp display-3 mb-3 text-accent"></i>
+        <h2 class="fw-bold mb-3">Pronto para desbloquear sua obra?</h2>
+        <p class="lead mb-2 opacity-90">Resposta no mesmo dia. Orçamento gratuito, sem compromisso.</p>
+        <p class="mb-5 opacity-75 small">Atendemos projetos residenciais, comerciais e industriais em todo o Brasil.</p>
+        <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Preciso%20de%20um%20projeto%20estrutural.%20Pode%20me%20enviar%20um%20orçamento%3F" target="_blank" class="btn btn-whatsapp btn-lg px-5">
+            <i class="bi bi-whatsapp me-2"></i>Falar no WhatsApp agora
+        </a>
     </div>
 </section>
 

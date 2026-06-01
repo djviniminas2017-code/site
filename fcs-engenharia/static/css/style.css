@@ -58,6 +58,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
     padding: 0.6rem 1.5rem;
     transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
 }
 
 .btn-primary-custom:hover {
@@ -75,6 +77,8 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
     padding: 0.6rem 1.5rem;
     transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
 }
 
 .btn-whatsapp:hover {
@@ -89,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     text-decoration: none;
     font-size: 0.9rem;
-    transition: gap 0.2s;
+    transition: all 0.2s;
 }
 
 .btn-link-custom:hover { color: var(--accent-dark); text-decoration: underline; }
@@ -111,6 +115,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero .container { position: relative; z-index: 1; }
 
+/* Hero badges */
+.hero-badges { opacity: 0.85; }
+
+.badge-hero {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+}
+
 /* ===== Page Header ===== */
 .page-header {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
@@ -124,6 +139,8 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--border);
     transition: all 0.3s;
     cursor: default;
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:hover {
@@ -158,13 +175,81 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
-/* ===== CTA Box ===== */
-.cta-box {
-    background: linear-gradient(135deg, var(--primary), #1a5276);
-}
-
+/* ===== CTA ===== */
 .cta-section {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+}
+
+/* ===== Processo (Como Funciona) ===== */
+.process-step {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.process-step:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(255,107,0,0.1);
+    transform: translateY(-4px);
+}
+
+.process-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.15;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.process-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    display: block;
+}
+
+/* ===== FAQ / Accordion ===== */
+.faq-box {
+    background: var(--primary-dark);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.faq-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+.faq-item:last-child {
+    border-bottom: none !important;
+}
+
+.faq-btn {
+    background: transparent !important;
+    color: rgba(255,255,255,0.9) !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 1rem 0 !important;
+    box-shadow: none !important;
+}
+
+.faq-btn::after {
+    filter: brightness(10);
+}
+
+.faq-btn:not(.collapsed) {
+    color: var(--accent) !important;
+}
+
+.faq-body {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.88rem;
+    padding: 0 0 1rem 0 !important;
+    background: transparent;
 }
 
 /* ===== Stats ===== */
@@ -203,6 +288,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
+/* ===== Parceria box (Sobre) ===== */
+.parceria-box {
+    background: var(--primary-dark);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
 /* ===== Serviços detalhados ===== */
 .service-detail-icon {
     width: 72px;
@@ -222,6 +313,16 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px dashed var(--border);
 }
 
+.tag-badge {
+    background: rgba(13,59,110,0.08);
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(13,59,110,0.15);
+}
+
 .list-check {
     list-style: none;
     padding: 0;
@@ -232,18 +333,19 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.35rem 0;
     color: var(--text-muted);
     font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
 }
 
 .list-check li::before {
-    content: '\bi-check-circle-fill';
+    content: '';
     display: inline-block;
     width: 20px;
     height: 20px;
+    min-width: 20px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23FF6B00' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3E%3C/svg%3E") no-repeat center/contain;
-    margin-right: 10px;
-    vertical-align: middle;
-    flex-shrink: 0;
-    display: inline-block;
+    margin-top: 2px;
 }
 
 /* ===== Contato ===== */
@@ -331,4 +433,11 @@ h1, h2, h3, h4, h5, h6 {
     .hero { min-height: 80vh; }
     .py-6 { padding-top: 3.5rem; padding-bottom: 3.5rem; }
     .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem; }
+    .process-step { margin-bottom: 1rem; }
+    .hero-badges { gap: 1rem !important; }
+    .badge-hero { font-size: 0.76rem; }
+}
+
+@media (max-width: 576px) {
+    .hero h1 { font-size: 1.8rem; }
 }
